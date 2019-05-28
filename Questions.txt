@@ -1,0 +1,16 @@
+Q1) Which are valid?
+
+a) doStuff() {
+     var x; // NO, must initialize right here...
+   }
+b) class Y {
+     var x = 99; // NO, only "local" vars
+   }
+c) doStuff() {
+     var y = 99; // YES :)
+   }
+d) doStuff() {
+     var var = 99; // YES!!!! var is a pseudo-type, not keyword... (backward compatibility)
+   }
+
+

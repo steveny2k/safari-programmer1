@@ -1,0 +1,22 @@
+Resources for Oracle Java Certification Study
+---------------------------------------------
+
+https://learning.oreilly.com/videos/oca-java-se/9780134427201
+
+https://learning.oreilly.com/videos/functional-programming-for/9780134778235
+
+Java Ranch / Code Ranch
+https://coderanch.com/f/24/java-programmer-OCPJP
+
+Java 11 documentation
+https://docs.oracle.com/en/java/javase/11/
+
+Java 8 Tutorials
+https://docs.oracle.com/javase/tutorial/
+
+Java 8 Study Guide (Book)
+Kathy Sierra & Bert Bates
+
+Sample Exams
+Enuthware
+
