@@ -58,3 +58,122 @@ What is the result?
     C) Z-Hello, Z-Hello2
     D) Z-Hello, Y-Hello2
     E) Compilation fails
+
+Q4) Given:
+ class Y {
+    static String sayHi() { return "Y-Hello"; }
+    String sayHi2() { return "Y-Hello2"; }
+  }
+  class Z extends Y {
+    static String sayHi() { return "Z-Hello"; }
+    String sayHi2() { return "Z-Hello2"; }
+  }
+and:
+    System.out.println(Z.sayHi() + ", " + Y.sayHi2());
+
+What is the result?
+    A) Y-Hello, Y-Hello2
+    B) Y-Hello, Z-Hello2
+    C) Z-Hello, Z-Hello2
+    D) Z-Hello, Y-Hello2
+    E) Compilation fails
+
+Q5) Given:
+ class Y {
+    int y = 99;
+    static String sayHi() { return "Y-Hello "; }
+  }
+  class Z extends Y {
+    int y = 100;
+    static String sayHi() { return "Z-Hello " + new Z().y; }
+  }
+and:
+    Z z = new Z();
+    System.out.println(Y.sayHi() + ", " + z.sayHi());
+
+What is the result?
+    A) Y-Hello, Y-Hello
+    B) Y-Hello, Z-Hello 99
+    C) Y-Hello, Z-Hello 100
+    D) Z-Hello 99, Z-Hello 100
+    E) Compilation fails
+
+
+Q6) Given:
+  class Base {
+    void doBaseStuff() { System.out.println("doBaseStuff"); }
+  }
+
+class Sub extends Base {
+    void doBaseStuff() { System.out.println("doSubStuff"); }
+    void doOtherStuff() { System.out.println("doOtherStuff"); }
+  }
+
+    Base b = new Sub();
+    b.doOtherStuff();
+
+What is the result?
+    A) doSubStuff
+    B) doOtherStuff
+    C) doBaseStuff
+    D) Exception at runtime
+    E) Compilation failure
+
+Q7) Given:
+  class Base {
+    void doBaseStuff() { System.out.println("doBaseStuff"); }
+  }
+
+class Sub extends Base {
+    void doBaseStuff() { System.out.println("doSubStuff"); }
+    void doOtherStuff() { System.out.println("doOtherStuff"); }
+  }
+
+    Base b = new Base();
+    ((Sub)b).doOtherStuff();
+
+What is the result?
+    A) doSubStuff
+    B) doOtherStuff
+    C) doBaseStuff
+    D) Exception at runtime
+    E) Compilation failure
+
+Q8) Given:
+  class Base {
+    void doBaseStuff() { System.out.println("doBaseStuff"); }
+  }
+
+class Sub extends Base {
+    void doBaseStuff() { System.out.println("doSubStuff"); }
+    void doOtherStuff() { System.out.println("doOtherStuff"); }
+  }
+
+    ((Sub)null).doOtherStuff();
+
+What is the result?
+    A) doSubStuff
+    B) doOtherStuff
+    C) doBaseStuff
+    D) Exception at runtime
+    E) Compilation failure
+
+Q9) Given:
+  class Base {
+    void doBaseStuff() { System.out.println("doBaseStuff"); }
+  }
+
+class Sub {
+    void doBaseStuff() { System.out.println("doSubStuff"); }
+    void doOtherStuff() { System.out.println("doOtherStuff"); }
+  }
+
+    Base b = new Sub();
+    ((Sub)b).doBaseStuff();
+
+What is the result?
+    A) doSubStuff
+    B) doOtherStuff
+    C) doBaseStuff
+    D) Exception at runtime
+    E) Compilation failure
