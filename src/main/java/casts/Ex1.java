@@ -16,7 +16,14 @@ class Sub extends Base {
 }
 
 public class Ex1 {
+  public static void doStuff(Base b) {
+    if (b instanceof Sub) {
+      ((Sub) b).doOtherStuff();
+    }
+  }
   public static void main(String[] args) {
+    Sub s = new Sub();
+    doStuff(s);
 //    byte smallValue = (byte)99;
 //    Base b = new Base();
     Base b = new Sub();

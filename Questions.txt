@@ -177,3 +177,33 @@ What is the result?
     C) doBaseStuff
     D) Exception at runtime
     E) Compilation failure
+
+Q10)
+class Q22 {
+    public int getValue() {return 1;}
+}
+which of these methods may individually be added
+to a subclass of this class?
+
+    A) public int getValue(int x) {return 1;}
+    B) public String getValue() {return "Hello";}
+    C) public String getValue(int x) {return "Hello";}
+    D) A), B), and C)
+    E) A), and C)
+
+Q11)
+  class Base {
+    void doBaseStuff() {System.out.println("doBaseStuff");}
+  }
+
+  class Sub extends Base {
+    void doBaseStuff() {System.out.println("doSubStuff");}
+    void doOtherStuff() { System.out.println("doOtherStuff");}
+  }
+
+In the Base and Sub classes, which are true in isolation?
+    A) doBaseStuff in Base can be marked public without causing errors
+*   B) doBaseStuff in Base can be marked private without causing errors
+*   C) doBaseStuff in Sub can be marked public without causing errors
+*   D) doBaseStuff in Sub can be marked protected without causing errors
+    E) doBaseStuff in Sub can be marked private without causing errors
