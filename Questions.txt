@@ -227,3 +227,120 @@ B) Compilation fails at line n2
 C) Compilation fails at line n3
 D) P with name null
 E) Compilation fails at line n4
+
+Q13) Given:
+  StringBuilder sb1 = new StringBuilder("Hello");
+    StringBuilder sb2 = sb1;
+    sb1 = null;
+
+Which is true?
+    A) sb1 is unreferenced and eligible for GC
+    B) sb1 and sb2 are unreferenced and eligible for GC
+    C) No objects are eligible for GC
+
+Q14) Given
+    StringBuilder sb1 = new StringBuilder("Hello");
+    StringBuilder sb2 = new StringBuilder("World");
+    sb1 = null;
+    sb2 = sb1;
+
+Which is true?
+    A) Object containing "Hello" is unreferenced and eligible for GC
+    B) Object containing "World" is unreferenced and eligible for GC
+    C) Object containing "Hello", and "World" are both unreferenced and eligible for GC
+    D) No objects are eligible for GC
+
+Q15) Given
+Date getDate() {
+  Date d = new Date(); // line n1
+  Date e = new Date(); // line n2
+  return d;
+}
+and:
+Date f = getDate();
+// line n3
+Which is true at line n3?
+A) One Date is eligible for GC
+B) Two Date objects are eligible for GC
+C) Three Date objects are eligible for GC
+D) No Date objects are eligible for GC
+
+Q16) Given:
+public void q12A(StringBuilder x) {
+    x.append(" world");
+}
+
+StringBuilder x = new StringBuilder("Hello");
+q12A(x);
+System.out.println(x);
+
+What is the result?
+    A) Hello
+    B) Hello world
+    C)  world
+    D) An error
+
+Q17) Given:
+  public void q14A(Integer x) {
+    x = x + 1;
+  }
+
+    Integer x = 99;
+    q14A(x);
+    System.out.println(x);
+
+What is the result?
+    A) 99
+    B) 100
+    C) An error
+
+Q18) Given:
+  public void q11A(int x) {
+    x = x + 1;
+  }
+
+    int x = 99;
+    q11A(x);
+    System.out.println(x);
+
+What is the result?
+    A) 99
+    B) 100
+    C) An error
+
+Q19) Given:
+ public void q13A(int[] x) {
+    x[0] = x[0] + 1;
+  }
+and:
+    int x[] = {99};
+    q13A(x);
+    System.out.println(x[0]);
+
+What is the result?
+    A) 99
+    B) 100
+    C) An error
+
+Q20) Given:
+  class Base {
+    void doBaseStuff() throws Exception {
+      System.out.println("doBaseStuff");
+    }
+  }
+
+  class Sub extends Base {
+    void doBaseStuff() throws IOException {
+      System.out.println("doSubStuff");
+    }
+  }
+
+In the Base and Sub classes, which are true in isolation?
+*   A) doBaseStuff in Base can be marked throws Exception without causing errors
+*   B) doBaseStuff in Base can be marked throws RuntimeException without causing errors
+    C) doBaseStuff in Sub can be marked throws Exception without causing errors
+*   D) doBaseStuff in Sub can be marked throws RuntimeException without causing errors
+*   E) if doBaseStuff in Base were marked throws Exception,
+       then doBaseStuff in Sub can be marked throws IOException without causing errors
+
+
