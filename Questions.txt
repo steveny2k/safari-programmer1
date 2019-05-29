@@ -207,3 +207,23 @@ In the Base and Sub classes, which are true in isolation?
 *   C) doBaseStuff in Sub can be marked public without causing errors
 *   D) doBaseStuff in Sub can be marked protected without causing errors
     E) doBaseStuff in Sub can be marked private without causing errors
+
+Q12) Given:
+class P {
+  String name;
+  P(String s) { this.name = s; } // line n1
+}
+class C extends P { // line n4
+  @Override // line n2
+  public String toString() { return "P with name " + name; }
+}
+and:
+P p = new C(); // line n3
+System.out.println(p);
+
+What is the result:
+A) Compilation fails at line n1
+B) Compilation fails at line n2
+C) Compilation fails at line n3
+D) P with name null
+E) Compilation fails at line n4
