@@ -367,3 +367,50 @@ C) Predicate<String> ps = s -> { s.length() > 0; };
 D) Supplier<String> ss = -> "Hello";
 
 * E) UnaryOperator<String> uos = s -> s.toUpperCase();
+
+Q23) Which are legal (individually)?
+A) module { }
+B) open module usefulstuff { opens some.package; }
+C) module clientstuff { requires othermodule; }
+D) module alibrary { exports modulename; }
+E) module aservice { provides ClassName with InterfaceName; }
+
+Q24) 
+/
+ + mods
+   + mod1
+     -module-info.class
+   + mod2
+     -module-info.class
+   + mylib
+     -SomeJava.class
+
+and the command line:
+java -p /mods/mod1:/mods/mod2:/mods/mylib -m mylib/SomeJava
+
+Which are true?
+A) code in SomeJava.class has access to code in mod2
+B) mod2 is denied access to SomeJava.class
+C) The command runs a main method in SomeJava
+D) code in mod1 has full access to mod2
+E) The command fails
+
+Q25)
+/
+ + mods
+   + mod1
+     -module-info.class
+   + mod2
+     -module-info.class
+   + mylib
+     -SomeJava.class
+
+and the command line:
+java -p /mods/mod1:/mods/mod2 -cp /mods/mylib SomeJava
+
+Which are true?
+A) code in SomeJava.class has access to code in mod2
+B) mod2 is denied access to SomeJava.class
+C) The command runs a main method in SomeJava
+D) code in mod1 has full access to mod2
+E) The command fails

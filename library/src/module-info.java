@@ -1,4 +1,7 @@
+import myservice.SvcInterface;
+
 module library {
   exports myservice;
-  opens impl;
+  provides SvcInterface with impl.MyImplementation;
+//  opens impl;
 }
