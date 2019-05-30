@@ -1,6 +1,8 @@
 package lambdastuff;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -41,6 +43,8 @@ public class School {
       }
     return out; // not immutable...
   }
+  // pass an object as argument because of it's **behavior**
+  // called "Command" pattern
   public static List<Student> getByCriterion(
       List<Student> ls, /*StudentCriterion*/Predicate<Student> crit) {
       List<Student> out = new ArrayList<>();
@@ -100,5 +104,21 @@ public class School {
 
 //    Object obj = s -> s.getCourses().contains("Art");
     Predicate<Student> pred = s -> s.getCourses().contains("Art");
+
+    // variables captured by "closure" must be final, or effectively final
+    /*final */String course = "Math";
+    System.out.println("--- students taking " + course + " ---");
+    showAll(getByCriterion(roster, s -> s.getCourses().contains(course)));
+//    course = course + " bad";
+
+    List<Student> mutableRoster = new ArrayList<>(roster);
+//    Collections.sort(roster, /* some "comparator" suitable for list contents */)
+    mutableRoster.sort((s1, s2) -> s2.getName().compareTo(s1.getName()));
+    mutableRoster.forEach(s -> System.out.println(s));
+
+    System.out.println("--------------------");
+    mutableRoster.sort((s1, s2) ->
+        Long.compare(s1.getCourses().size(), s2.getCourses().size()));
+    mutableRoster.forEach(s -> System.out.println(s));
   }
 }
