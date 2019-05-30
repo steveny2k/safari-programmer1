@@ -343,4 +343,27 @@ In the Base and Sub classes, which are true in isolation?
 *   E) if doBaseStuff in Base were marked throws Exception,
        then doBaseStuff in Sub can be marked throws IOException without causing errors
 
+Q21) Which are legal (individually)?
+  A) Object o = (String s) -> s.length() > 0;
+  B) myListOfString.sort(s -> s.length() > 0);
+* C) Predicate<String> ps = (var s) -> s.charAt(0) == 'X';
+  D) Predicate<String> ps = String s -> s.length() > 2;
+  E) Predicate<String> ps = s -> s.length();
 
+Q22) Which are legal (individually)?
+A)interface Odd {
+  void odd();
+  int total(int a, int b);
+}
+Odd o = (a, b) -> a + b;
+
+B) abstract class Test {
+  public abstract boolean test(Date d);
+}
+Test t = d -> d.getHours() > 6;
+
+C) Predicate<String> ps = s -> { s.length() > 0; };
+
+D) Supplier<String> ss = -> "Hello";
+
+* E) UnaryOperator<String> uos = s -> s.toUpperCase();
